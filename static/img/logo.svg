@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff88"/>
+      <stop offset="50%" style="stop-color:#00d4aa"/>
+      <stop offset="100%" style="stop-color:#00b4d8"/>
+    </linearGradient>
+    
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Щит с свечением -->
+  <path d="M256 50 L440 115 L440 290 C440 400 350 470 256 500 C162 470 72 400 72 290 L72 115 Z" 
+        fill="#00ff8815"
+        stroke="url(#shieldGrad)" 
+        stroke-width="6"
+        filter="url(#glow)"/>
+  
+  <!-- Внутренний контур -->
+  <path d="M256 90 L400 145 L400 280 C400 370 330 425 256 450 C182 425 112 370 112 280 L112 145 Z" 
+        fill="none"
+        stroke="#00ff88" 
+        stroke-width="2"
+        opacity="0.4"/>
+  
+  <!-- Замок - дужка -->
+  <path d="M210 260 L210 200 C210 155 230 130 256 130 C282 130 302 155 302 200 L302 260" 
+        fill="none" 
+        stroke="url(#shieldGrad)" 
+        stroke-width="14"
+        stroke-linecap="round"
+        filter="url(#glow)"/>
+  
+  <!-- Замок - корпус -->
+  <rect x="185" y="255" width="142" height="110" rx="12" 
+        fill="#001a0f" 
+        stroke="url(#shieldGrad)" 
+        stroke-width="6"
+        filter="url(#glow)"/>
+  
+  <!-- Замочная скважина -->
+  <circle cx="256" cy="300" r="18" fill="#00ff88" filter="url(#glow)"/>
+  <path d="M256 310 L256 345 L246 355 L266 355 L256 345" fill="#00ff88" filter="url(#glow)"/>
+</svg>

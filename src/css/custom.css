@@ -1,0 +1,350 @@
+:root {
+  --ifm-color-primary: #00d4aa;
+  --ifm-color-primary-dark: #00bf99;
+  --ifm-color-primary-darker: #00b591;
+  --ifm-color-primary-darkest: #009577;
+  --ifm-color-primary-light: #00e9bb;
+  --ifm-color-primary-lighter: #00f3c3;
+  --ifm-color-primary-lightest: #1affcf;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 212, 170, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #00d4aa;
+  --ifm-color-primary-dark: #00bf99;
+  --ifm-color-primary-darker: #00b591;
+  --ifm-color-primary-darkest: #009577;
+  --ifm-color-primary-light: #00e9bb;
+  --ifm-color-primary-lighter: #00f3c3;
+  --ifm-color-primary-lightest: #1affcf;
+  --ifm-background-color: #0d1117;
+  --ifm-navbar-background-color: #161b22;
+  --ifm-footer-background-color: #0d1117;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 212, 170, 0.15);
+}
+
+table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  padding: 0.75rem;
+}
+
+th {
+  background-color: var(--ifm-color-emphasis-100);
+  font-weight: 600;
+}
+
+[data-theme='dark'] th {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+td code {
+  background-color: var(--ifm-color-emphasis-200);
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+}
+
+.navbar__title {
+  font-weight: 700;
+}
+
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.alert {
+  border-radius: 8px;
+}
+
+.prism-code {
+  border-radius: 8px;
+}
+
+pre code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  line-height: 1.4;
+}
+
+/* Улучшенная навигация */
+.menu__list {
+  padding-left: 0;
+}
+
+.menu__link {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  padding: 0.5rem 0.75rem;
+}
+
+.menu__link:hover {
+  background: rgba(0, 212, 170, 0.1);
+}
+
+.menu__link--active {
+  background: rgba(0, 212, 170, 0.15) !important;
+  color: var(--ifm-color-primary) !important;
+  font-weight: 600;
+  border-left: 3px solid var(--ifm-color-primary);
+  padding-left: calc(0.75rem - 3px);
+}
+
+.menu__list-item-collapsible > .menu__link {
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+.theme-doc-sidebar-item-category > .menu__list-item-collapsible {
+  margin-top: 0.75rem;
+}
+
+/* Подкатегории с линией */
+.menu__list .menu__list {
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--ifm-color-emphasis-200);
+  margin-left: 0.75rem;
+}
+
+[data-theme='dark'] .menu__list .menu__list {
+  border-left-color: rgba(0, 212, 170, 0.3);
+}
+
+/* Navbar улучшения */
+.navbar {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.navbar__title {
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.navbar__link {
+  font-weight: 600;
+}
+
+/* Хлебные крошки */
+.breadcrumbs__link {
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.breadcrumbs__link:hover {
+  background: rgba(0, 212, 170, 0.1);
+}
+
+/* Красивый scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ifm-color-emphasis-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ifm-color-emphasis-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-color-primary);
+}
+
+/* TOC справа */
+.table-of-contents__link:hover,
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+}
+
+/* Markdown контент */
+.markdown h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--ifm-color-primary);
+  padding-bottom: 0.5rem;
+}
+
+.markdown h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Карточки в generated-index */
+.cardContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.cardContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--ifm-color-primary);
+}
+
+/* ===== NAVBAR DROPDOWN УЛУЧШЕНИЯ ===== */
+
+/* Стиль dropdown кнопок */
+.navbar__item.dropdown {
+  font-weight: 600;
+}
+
+.navbar__link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.navbar__link:hover {
+  background: rgba(0, 212, 170, 0.15);
+  color: var(--ifm-color-primary);
+}
+
+/* Dropdown меню */
+.dropdown__menu {
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  padding: 0.5rem;
+  min-width: 220px;
+  background: var(--ifm-navbar-background-color);
+  backdrop-filter: blur(10px);
+}
+
+[data-theme='dark'] .dropdown__menu {
+  background: #1a1f26;
+  border-color: rgba(0, 212, 170, 0.2);
+}
+
+/* Элементы dropdown */
+.dropdown__link {
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  margin: 2px 0;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.dropdown__link:hover {
+  background: rgba(0, 212, 170, 0.15);
+  color: var(--ifm-color-primary);
+}
+
+/* Активный элемент */
+.dropdown__link--active {
+  background: rgba(0, 212, 170, 0.2);
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+/* Разделитель в dropdown */
+.dropdown__menu hr {
+  border: none;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  margin: 0.5rem 0;
+}
+
+[data-theme='dark'] .dropdown__menu hr {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* GitHub иконка */
+.header-github-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.header-github-link:hover {
+  background: rgba(0, 212, 170, 0.15);
+  opacity: 1;
+}
+
+.header-github-link::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: block;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23ffffff' d='M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+}
+
+[data-theme='light'] .header-github-link::before {
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23181717' d='M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+}
+
+/* Navbar sticky улучшения */
+.navbar {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(22, 27, 34, 0.9);
+}
+
+/* Логотип анимация */
+.navbar__logo img {
+  transition: transform 0.3s ease;
+}
+
+.navbar__logo:hover img {
+  transform: scale(1.1);
+}
+
+/* Navbar title градиент */
+.navbar__title {
+  background: linear-gradient(135deg, #00ff88 0%, #00d4aa 50%, #00b4d8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+/* Mobile navbar улучшения */
+@media (max-width: 996px) {
+  .navbar-sidebar__items {
+    padding: 1rem;
+  }
+  
+  .navbar-sidebar__item {
+    margin-bottom: 0.5rem;
+  }
+  
+  .navbar-sidebar .menu__link {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+  }
+}
+
+/* Анимация dropdown */
+.dropdown__menu {
+  animation: dropdownFadeIn 0.2s ease;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
