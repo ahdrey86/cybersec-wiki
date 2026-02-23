@@ -7,11 +7,12 @@ const config: Config = {
   tagline: 'База знаний по информационной безопасности',
   favicon: 'img/favicon.ico',
 
-  url: 'https://your-domain.github.io',
-  baseUrl: '/',
+  url: 'https://ahdrey86.github.io',
+  baseUrl: '/cybersec-wiki/',
 
-  organizationName: 'your-username',
+  organizationName: 'ahdrey86',
   projectName: 'cybersec-wiki',
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -196,7 +197,7 @@ const config: Config = {
         },
         // GitHub
         {
-          href: 'https://github.com/your-username/cybersec-wiki',
+          href: 'https://github.com/ahdrey86/cybersec-wiki',
           position: 'right',
           className: 'header-github-link',
           'aria-label': 'GitHub',
