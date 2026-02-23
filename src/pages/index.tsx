@@ -4,6 +4,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
+import React, { useState, useEffect } from 'react';
+import LoadingScreen from '../components/LoadingScreen';
 
 // Основные разделы
 const sections = [
@@ -230,29 +232,56 @@ function StatsSection() {
 }
 
 export default function Home(): JSX.Element {
+  const [isLoading, setIsLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    // Проверяем, была ли уже показана заставка в этой сессии
+    const hasSeenIntro = sessionStorage.getItem('cybersec-intro-seen');
+    if (hasSeenIntro) {
+      setIsLoading(false);
+      setShowContent(true);
+    }
+  }, []);
+
+  const handleLoadingComplete = () => {
+    sessionStorage.setItem('cybersec-intro-seen', 'true');
+    setIsLoading(false);
+    setTimeout(() => setShowContent(true), 100);
+  };
+
+  if (isLoading) {
+    return <LoadingScreen onComplete={handleLoadingComplete} />;
+  }
+
   return (
-    <Layout
-      title="Главная"
-      description="База знаний по информационной безопасности — криптография, сети, ГОСТ алгоритмы">
-      <HomepageHeader />
-      <main>
-        <StatsSection />
-        
-        <section className={styles.sectionsArea}>
-          <div className="container">
-            <Heading as="h2" className={styles.areaTitle}>
-              📂 Разделы базы знаний
-            </Heading>
-            <div className={styles.sectionsGrid}>
-              {sections.map((props, idx) => (
-                <SectionCard key={idx} {...props} />
-              ))}
+    <div style={{ 
+      opacity: showContent ? 1 : 0, 
+      transition: 'opacity 0.5s ease',
+    }}>
+      <Layout
+        title="Главная"
+        description="База знаний по информационной безопасности — криптография, сети, ГОСТ алгоритмы">
+        <HomepageHeader />
+        <main>
+          <StatsSection />
+          
+          <section className={styles.sectionsArea}>
+            <div className="container">
+              <Heading as="h2" className={styles.areaTitle}>
+                📂 Разделы базы знаний
+              </Heading>
+              <div className={styles.sectionsGrid}>
+                {sections.map((props, idx) => (
+                  <SectionCard key={idx} {...props} />
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-        
-        <ToolsSection />
-      </main>
-    </Layout>
+          </section>
+          
+          <ToolsSection />
+        </main>
+      </Layout>
+    </div>
   );
 }
