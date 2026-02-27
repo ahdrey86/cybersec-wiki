@@ -190,6 +190,47 @@ const config: Config = {
             },
           ],
         },
+        // SIEM - dropdown
+        {
+          type: 'dropdown',
+          label: '🛡️ SIEM',
+          position: 'left',
+          items: [
+            {
+              type: 'doc',
+              docId: 'siem/intro',
+              label: '📖 Введение в SIEM',
+            },
+            {
+              type: 'html',
+              value: '<hr style="margin: 4px 0;">',
+            },
+            {
+              type: 'doc',
+              docId: 'siem/log-analysis',
+              label: '📋 Анализ логов',
+            },
+            {
+              type: 'doc',
+              docId: 'siem/sigma-rules',
+              label: '📜 SIGMA правила',
+            },
+            {
+              type: 'doc',
+              docId: 'siem/mitre-attack',
+              label: '🎯 MITRE ATT&CK',
+            },
+            {
+              type: 'html',
+              value: '<hr style="margin: 4px 0;">',
+            },
+            {
+              type: 'doc',
+              docId: 'siem/wazuh',
+              label: '🔷 Wazuh',
+            },
+          ],
+        },
         // Поиск (справа)
         {
           type: 'search',

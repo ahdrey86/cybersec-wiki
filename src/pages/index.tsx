@@ -45,6 +45,15 @@ const sections = [
     stats: '2 темы',
     topics: ['РФ', 'Международное'],
   },
+  {
+    title: 'SIEM',
+    emoji: '🛡️',
+    link: '/docs/siem/intro',
+    description: 'Мониторинг безопасности, анализ логов, SIGMA, MITRE ATT&CK',
+    color: '#ff9f1c',
+    stats: '5 тем',
+    topics: ['Wazuh', 'SIGMA', 'MITRE', 'Логи'],
+  },
 ];
 
 // Инструменты по категориям
@@ -113,6 +122,16 @@ const toolCategories = [
       { name: 'Конвертер систем', link: '/docs/computer-architecture/cpu-memory#конвертер-систем-счисления' },
       { name: 'Размеры данных', link: '/docs/computer-architecture/cpu-memory#калькулятор-размеров-данных' },
       { name: 'Память процесса', link: '/docs/computer-architecture/cpu-memory#память-процесса' },
+    ]
+  },
+  {
+    name: 'SIEM / Blue Team',
+    icon: '🛡️',
+    tools: [
+      { name: 'Анализатор логов', link: '/docs/siem/log-analysis' },
+      { name: 'SIGMA конструктор', link: '/docs/siem/sigma-rules' },
+      { name: 'MITRE ATT&CK', link: '/docs/siem/mitre-attack' },
+      { name: 'Wazuh', link: '/docs/siem/wazuh' },
     ]
   },
 ];
