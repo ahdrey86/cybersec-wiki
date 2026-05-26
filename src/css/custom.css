@@ -56,7 +56,18 @@ td code {
 
 .theme-doc-sidebar-container {
   border-right: 1px solid var(--ifm-color-emphasis-200);
+  position: sticky;
+  top: var(--ifm-navbar-height);
+  height: calc(100vh - var(--ifm-navbar-height));
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ifm-color-emphasis-400) transparent;
 }
+
+.theme-doc-sidebar-container::-webkit-scrollbar { width: 4px; }
+.theme-doc-sidebar-container::-webkit-scrollbar-thumb { background: var(--ifm-color-emphasis-400); border-radius: 4px; }
+.theme-doc-sidebar-container::-webkit-scrollbar-track { background: transparent; }
 
 .alert {
   border-radius: 8px;
@@ -137,6 +148,13 @@ pre code {
 
 .breadcrumbs__link:hover {
   background: rgba(0, 212, 170, 0.1);
+}
+
+@media (max-width: 996px) {
+  .breadcrumbs { flex-wrap: wrap; row-gap: 0.25rem; max-width: 100%; overflow: hidden; }
+  .breadcrumbs__item { max-width: 100%; min-width: 0; }
+  .breadcrumbs__link { display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .breadcrumbs__item--active .breadcrumbs__link { max-width: calc(100vw - 2rem); }
 }
 
 /* Красивый scrollbar */
